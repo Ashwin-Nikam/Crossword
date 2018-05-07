@@ -7,4 +7,9 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bookstore');
 const db = mongoose.connection;
 
-console.log('Hello world');
+app.get('/', (req, res) => {
+	res.send('Hello world');
+});
+
+app.listen(3000);
+console.log('Running on port 3000...');
