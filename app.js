@@ -7,8 +7,13 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bookstore');
 const db = mongoose.connection;
 
+
 app.get('/', (req, res) => {
-	res.send('Hello world');
+	res.send('Please use /api/books or /api/genres');
+});
+
+app.get('/api/genres', (req, res) => {
+	
 });
 
 app.listen(3000);
