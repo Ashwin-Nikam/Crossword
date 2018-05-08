@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 	res.send('Please use /api/books or /api/genres');
 });
 
+
 app.get('/api/genres', (req, res) => {
 	Genre.getGenres((err, genres) => {
 		if(err) throw err;
