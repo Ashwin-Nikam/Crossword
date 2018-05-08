@@ -13,9 +13,9 @@ const genreSchema = mongoose.Schema({
 	}
 });
 
-module.exports.Genre = mongoose.model('Genre', genreSchema);
+const Genre = module.exports = mongoose.model('Genre', genreSchema);
 
 // Get Genres
-module.exports.getGenres() = function(callback, limit) {
+module.exports.getGenres = function(callback, limit) {
 	Genre.find(callback).limit(limit);
 }

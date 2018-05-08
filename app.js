@@ -15,7 +15,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/genres', (req, res) => {
-	
+	Genre.getGenres((err, genres) => {
+		if(err) throw err;
+		res.json(genres);
+	});
 });
 
 app.listen(3000);
