@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+Genre = require('./models/genre.js');
+
 //Connect to Mongoose
 mongoose.connect('mongodb://localhost/bookstore');
 const db = mongoose.connection;
