@@ -33,3 +33,5 @@ module.exports.updateGenre = function(id, genre, options, callback) {
 	}
 	Genre.findOneAndUpdate(query, update, options, callback);
 }
+
+// Delete Genre
