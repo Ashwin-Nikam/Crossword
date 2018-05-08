@@ -44,12 +44,19 @@ app.get('/api/books/:id', (req, res) => {
 
 app.post('/api/genres', (req, res) => {
 	var genre = req.body;
-	Genre.addGenre(genre, (err, genres) => {
+	Genre.addGenre(genre, (err, genre) => {
 		if(err) throw err;
 		res.json(genre);
 	});
 });
 
+app.post('/api/books', (req, res) => {
+	var book = req.body;
+	Book.addBook(book, (err, book) => {
+		if(err) throw err;
+		res.json(book);
+	}) 
+});
 
 app.listen(3000);
 console.log('Running on port 3000...');
