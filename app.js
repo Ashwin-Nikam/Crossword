@@ -58,5 +58,15 @@ app.post('/api/books', (req, res) => {
 	}) 
 });
 
+
+app.put('/api/genres/:id', (req, res) => {
+	var id = req.params.id;
+	var genre = req.body;
+	Genre.updateGenre(id, genre, {}, (err, genre) => {
+		if(err) throw err;
+		res.json(genre);
+	});
+});
+
 app.listen(3000);
 console.log('Running on port 3000...');
