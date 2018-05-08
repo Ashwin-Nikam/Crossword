@@ -31,5 +31,13 @@ app.get('/api/books', (req, res) => {
 	});
 });
 
+
+app.get('/api/books/:id', (req, res) => {
+	Book.getBookById(req.params.id, (err, books) => {
+		if(err) throw err;
+		res.json(books);
+	});
+});
+
 app.listen(3000);
 console.log('Running on port 3000...');
