@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+app.use(bodyParser.json())
+
 Genre = require('./models/genre.js');
 Book = require('./models/book.js');
 
@@ -38,6 +40,16 @@ app.get('/api/books/:id', (req, res) => {
 		res.json(books);
 	});
 });
+
+
+app.post('/api/genres', (req, res) => {
+	var genre = req.body;
+	Genre.addGenre(genre, (err, genres) => {
+		if(err) throw err;
+		res.json(genre);
+	});
+});
+
 
 app.listen(3000);
 console.log('Running on port 3000...');
