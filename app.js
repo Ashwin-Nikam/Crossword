@@ -77,5 +77,13 @@ app.put('/api/books/:id', (req, res) => {
 	});
 });
 
+app.delete('/api/genres/:id', (req, res) => {
+	var id = req.params.id;
+	Genre.deleteGenre(id, (err, genre) => {
+		if(err) throw err;
+		res.json(genre);
+	});
+});
+
 app.listen(3000);
 console.log('Running on port 3000...');
